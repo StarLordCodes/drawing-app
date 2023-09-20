@@ -1,0 +1,71 @@
+/* Reset default styles and set global styles */
+html,
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* making controls section elements non selectable*/
+.controls {
+  margin-right: 2rem;
+  user-select: none;
+}
+
+/* main content taking up full space */
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.change-color {
+  margin-left: 5rem;
+}
+
+/* Positioning Message for hexcolor code change or error message */
+#colorError {
+  position: absolute;
+  top: 5rem;
+  right: 5rem;
+  font-size: 1rem;
+}
+
+/* shows the current brush color */
+#changedColor {
+  display: inline-block; /* Display as an inline block */
+  border-radius: 1rem; /* Rounded corners */
+  background-color: black;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+/* make headings non selectable by user */
+h1 {
+  margin: 0.5rem;
+  text-align: left;
+  user-select: none;
+}
+
+/* style for canvas for drawing */
+canvas {
+  border: 2px solid #000;
+}
+
+button {
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  width: 14rem;
+}
+
+/* make the footer non selectable */
+p{
+  user-select: none;
+}

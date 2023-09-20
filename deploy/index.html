@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Simple Drawing App</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Simple Drawing App</h1>
+      <div class="controls">
+        <button id="decrease"> - </button>
+        <span>Line thickness: </span>
+        <span id="thickness"> 2 </span>
+        <button id="increase"> + </button>
+        <span class="change-color">
+          <div id="changedColor"></div>
+          <label for="colorId"> Change brush color: </span>
+          <input type="text" id="colorId" placeholder="Enter Color Hexcode eg: #ff0000">
+          <button id="colorButton">Change Color</button>
+          <span id="colorError"></span>
+        </span>
+      </div>
+      <canvas id="canvas"></canvas>
+      <p> Made by starlord24x7 </p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
