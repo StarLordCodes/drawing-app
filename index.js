@@ -13,7 +13,8 @@ class DrawingApp {
     this.lineThickness = 2; // Initial value for line thickness attribute
 
     // Set the canvas size based on the window size
-    updateCanvasSize();
+    this.canvas.width = window.innerWidth - 40;
+    this.canvas.height = 450;
 
     this.context.lineWidth = 2; // Set default stroke width
     this.context.strokeStyle = "#000000"; // Set default color for strokes
@@ -114,8 +115,7 @@ class DrawingApp {
 
   // Method to increase line thickness
   increaseLineThickness() {
-    if (this.lineThickness < 10) {
-      // Adjust the maximum line thickness as needed
+    if (this.lineThickness < 10) { // Adjust the maximum line thickness as needed
       this.lineThickness++;
       this.context.lineWidth = this.lineThickness;
       this.updateLineThickness();
@@ -135,45 +135,20 @@ class DrawingApp {
         this.colorError.textContent = `Color changed to: ${hexColor}`; // show color changed message
         this.changedColor.style.backgroundColor = `${hexColor}`; // change the color of the brush color indicator
       } else {
-        throw new Error("Invalid hex code");
+        throw new Error("Invalid hex code"); 
       }
-    } catch (error) {
-      // in case of  an error execute these statements
+    } catch (error) { // in case of  an error execute these statements
       console.error("An error occurred:", error); // record the error on the console
       this.colorError.textContent = "Invalid hex code !"; // show error message on the app
       this.colorInput.value = `${this.context.strokeStyle}`; // set the input box value to the last valid hex code
     }
   }
-} // end of class
+}// end of class
 
 try {
   const _app = new DrawingApp("canvas"); // Initialize the drawing app
 } catch (error) {
-  console.error("An error occurred:", error); // in case of any error, record it on console
+  console.error("An error occurred:", error);  // in case of any error, record it on console
 } finally {
   console.log("Drawing app initialized."); // No matter if the app starts or error occurs, log that the app was initialised
 }
-
-function updateCanvasSize() {
-  const canvas = document.getElementById("canvas");
-  const canvasWidth = window.innerWidth - 40;
-  const canvasHeight = window.innerHeight * 0.7;
-
-  // Save the current drawing data
-  const imageData = canvas.toDataURL();
-
-  canvas.width = canvasWidth;
-  canvas.height = canvasHeight;
-
-  // Restore the saved drawing data onto the resized canvas
-  const image = new Image();
-  image.src = imageData;
-  image.onload = function () {
-    const context = canvas.getContext("2d");
-    context.drawImage(image, 0, 0);
-  };
-}
-
-window.addEventListener("resize", () => {
-  updateCanvasSize();
-});
