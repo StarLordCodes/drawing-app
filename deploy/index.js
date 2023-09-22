@@ -24,7 +24,7 @@ class DrawingApp {
       try {
         this.isDrawing = true; // Notify that drawing is in progress
         this.context.beginPath(); // Start a new stroke path
-        this.canvas.style.cursor = "crosshair";
+        this.canvas.style.cursor = "crosshair"; //set cursor to crosshair while drawing
       } catch (error) {
         console.error("An error occurred:", error); // Handle any errors
       }
@@ -51,7 +51,7 @@ class DrawingApp {
       try {
         this.isDrawing = false; // Set drawing boolean to false
         this.context.closePath(); // Close the current drawing path
-        this.canvas.style.cursor = "default";
+        this.canvas.style.cursor = "default"; //set cursor back to default while not drawing
       } catch (error) {
         console.error("An error occurred:", error);
       }
@@ -62,7 +62,7 @@ class DrawingApp {
       try {
         this.isDrawing = false; // Set drawing boolean to false
         this.context.closePath(); // Close the current drawing path
-        this.canvas.style.cursor = "default";
+        this.canvas.style.cursor = "default"; //set cursor back to default while not drawing
       } catch (error) {
         console.error("An error occurred:", error);
       }
