@@ -23,3 +23,4 @@ A simple drawing app made as part of the Stackup Javascript Intermediate Bounty 
 - Adding buttons to draw fixed shapes like polygons, circles, etc.
 - Option to save the drawing to the device.
 - Visual color palette on the site instead of using hex codes to change color.
+- Undo and Redo features
